@@ -1,0 +1,134 @@
+:root {
+    --primary-red: #e94a4a;
+    --primary-white: #fffefa;
+    --light-white: #afa8b9;
+    --primary-grey: #e5e5e5;
+    --primary-blue: #19172e;
+    --xl-font: 4vh;
+    --l-font: 3vh;
+    --m-font: 2vh;
+    --s-font: 1vh;
+  }
+  // @media only screen and (max-width: 600px) {
+  //   :root {
+  //     --xl-font: 4vh;
+  //     --l-font: 3vh;
+  //     --m-font: 2vh;
+  //     --s-font: 1vh;
+  //   }
+  // }
+  
+@mixin media-sm {
+  @media screen and (min-width: 200px) and (max-width: 500px) {
+    @content;
+  }
+}
+@mixin media-md {
+  @media screen and (min-width: 501px) and (max-width: 767px) {
+    @content;
+  }
+}
+@mixin media-lg {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin media-vl {
+  @media screen and (min-width: 1900px) {
+    @content;
+  }
+}
+
+// ================== EXAMPLE how to use ===========================
+
+// .search-copyright-tab .copyright {
+//   @include media-gte-sm {
+//     font-size: 19px;
+//   }
+//   @include media-gte-lg {
+//     font-size: 21px;
+//   }
+// }
+
+
+// Color palette of project
+$primaryColor : rgba(255,255,255);
+$secondaryColor : rgba(1,119,251,1);
+$tintColor : rgba(255,219,1,1);
+$backgroundColor : rgba(249,251,255);
+$hoverColor : rgba(242,248,255,1);
+$lightPrimaryColor : rgba(122,184,253);
+$borderColor: rgba(43,142,251,1);
+$btnColor: rgba(0,106,224,1);
+
+
+// Font colors
+$textBlackColor: rgba(54,70,99,1);
+$textColor : rgba(110,121,143,1);
+$textDarkColor : rgba(79,93,119,1);
+$textLightColor : rgba(215,218,224,1);
+$textGreyColor: rgba(200,205,215,1);
+
+
+
+// Border types
+.normalBorder{
+  border: 1px solid $borderColor;
+}
+
+
+// General functions
+@mixin flexCenter ($direction:null, $justify:space-between, $align:center, $rowgap:null, $colgap:null) {
+  display: flex;
+  flex-direction: $direction;
+  row-gap: $rowgap;
+  column-gap: $colgap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin gridColumnCenter($justify:center, $align:center, $colgap:null){
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  column-gap: $colgap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin gridRowCenter($justify:center, $align:center, $rowgap:null){
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: auto;
+  row-gap: $rowgap;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+// Common CSS
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: $primaryColor;
+}
+
+input{
+  outline: none;
+}
+
+button{
+  outline: none;
+  cursor: pointer;
+}
+
+
+@import "./container"

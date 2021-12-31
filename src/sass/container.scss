@@ -1,0 +1,32 @@
+.container{
+    height: 100vh;
+    width: 100vw;
+    @include gridRowCenter();
+
+    #gearbox-heading{
+        text-align: center;
+        font-size: var(--xl-font);
+    }
+
+    #gearbox-btn-container{
+        @include gridColumnCenter($colgap: 1vh);
+
+        .gearbox-btn{
+            background-color: $btnColor;
+            color: $primaryColor;
+            padding: 4vh;
+            font-size: var(--m-font);
+            border-radius: 2px;
+            border: 2px solid $textBlackColor;
+            outline: none;
+            font-weight: 600;
+            transition: 300ms;
+            &:hover{
+                background-color: $hoverColor;
+                color: $textBlackColor;
+              }
+        }
+    }
+}
+
+@import "./gearbox"
