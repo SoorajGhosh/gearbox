@@ -12,7 +12,7 @@
         @include gridColumnCenter($colgap: 1vh);
 
         .gearbox-btn{
-            background-color: $btnColor;
+            background-color: $tintColor;
             color: $primaryColor;
             padding: 4vh;
             font-size: var(--m-font);
